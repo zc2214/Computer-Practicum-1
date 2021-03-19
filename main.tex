@@ -35,7 +35,17 @@
 \begin{document}
 
 \maketitle
-
+\section{Introduction}
+In this computer practicum, I use Python code to simulate the chemical kinetics of the given two sets of reactions. Firstly, the basic idea is to generate a tiny time slot, which is $1 \times 10^{-3}$ s, and assume the concentration and rate change of each chemical to be linear. As the change within the assumed time slot is linear, we can computer the slope of each chemical's concentration by the rate law of each reaction, which is:
+\begin{equation}
+    rate = k * [A]^a * [B]^b
+\end{equation}
+And the concentration at the end of the assumed time slot is:
+\begin{equation}
+    [A] = [A]_0 + rate * time slot
+\end{equation}
+When the slope of the curve is tiny, or one of the chemicals' concentration is decreased to zero, end the program and plot the graph.\\
+I have set two reaction orders in the given two sets of reactions, which are zero and first with varying concentration, to see the chemical kinetics properties.
 \section{First Reaction}
 \begin{equation}
     \ce{A + B <=>T[k1][k-1] C}
@@ -49,9 +59,9 @@
 \includegraphics[scale=0.6]{1. zero.png}
 \caption{Zero Order, \ce{[A]0}=2 \ce{[B]0}=1}
 \end{figure}
-As we can see from the graph that in zero order reaction, we cannot reach equilibrium，so steady-state approximation is not valid.
+As we can see from the graph that in zero-order reaction, we cannot reach equilibrium，, so the steady-state approximation is not valid.
 
-\subsection{First order}
+\subsection{First-order}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{1. first 2 1.png}
@@ -67,7 +77,7 @@ As we can see from the graph that in zero order reaction, we cannot reach equili
 \includegraphics[scale=0.6]{1. first 1 1.png}
 \caption{First Order, \ce{[A]0}=1 \ce{[B]0}=1}
 \end{figure}
-As we can see from the graphs that in first order reaction, we can reach equilibrium regardless of the initial concentration，so steady-state approximation is valid.
+As we can see from the graphs that in the first-order reaction, we can reach equilibrium regardless of the initial concentration，, so the steady-state approximation is valid.
 
 
 \section{Second Reaction ((The Enzyme Mechanisms)}
@@ -83,9 +93,9 @@ As we can see from the graphs that in first order reaction, we can reach equilib
 \includegraphics[scale=0.6]{2. zero.png}
 \caption{Zero Order, \ce{[A]0}=2 \ce{[B]0}=1}
 \end{figure}
-As we can see from the graph that in zero order reaction, we cannot reach equilibrium，so steady-state approximation is not valid.
+As we can see from the graph that in zero-order reaction, we cannot reach equilibrium，, so the steady-state approximation is not valid.
 
-\subsection{First order}
+\subsection{First-order}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{2. first 2 1.png}
@@ -101,7 +111,7 @@ As we can see from the graph that in zero order reaction, we cannot reach equili
 \includegraphics[scale=0.6]{2. first 1 1.png}
 \caption{First Order, \ce{[A]0}=1 \ce{[B]0}=1}
 \end{figure}
-As we can see from the graphs that in first order reaction, we can reach equilibrium regardless of the initial concentration，so steady-state approximation is valid.
+As we can see from the graphs, in the first-order reaction, we can reach equilibrium. The concentration of A can always back to initial ones, regardless of the initial concentration，, so the steady-state approximation is valid.
 
 \newpage
 \section*{Appendix I: Python Code For First Reaction}
